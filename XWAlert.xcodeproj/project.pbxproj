@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7428A571E8E56220045776C /* UIAlertController+AddAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E7428A541E8E56220045776C /* UIAlertController+AddAction.m */; };
+		E7428A581E8E56220045776C /* XWAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = E7428A561E8E56220045776C /* XWAlert.m */; };
+		E7428A5E1E8E56290045776C /* ShowAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7428A5B1E8E56290045776C /* ShowAlertViewController.m */; };
+		E7428A5F1E8E56290045776C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7428A5D1E8E56290045776C /* ViewController.m */; };
 		E7C5F11F1E8DF6E200ABB44C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F11E1E8DF6E200ABB44C /* main.m */; };
 		E7C5F1221E8DF6E200ABB44C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F1211E8DF6E200ABB44C /* AppDelegate.m */; };
-		E7C5F1251E8DF6E200ABB44C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F1241E8DF6E200ABB44C /* ViewController.m */; };
 		E7C5F1281E8DF6E200ABB44C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C5F1261E8DF6E200ABB44C /* Main.storyboard */; };
 		E7C5F12A1E8DF6E200ABB44C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7C5F1291E8DF6E200ABB44C /* Assets.xcassets */; };
 		E7C5F12D1E8DF6E200ABB44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7C5F12B1E8DF6E200ABB44C /* LaunchScreen.storyboard */; };
@@ -35,12 +38,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E7428A531E8E56220045776C /* UIAlertController+AddAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+AddAction.h"; sourceTree = "<group>"; };
+		E7428A541E8E56220045776C /* UIAlertController+AddAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+AddAction.m"; sourceTree = "<group>"; };
+		E7428A551E8E56220045776C /* XWAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XWAlert.h; sourceTree = "<group>"; };
+		E7428A561E8E56220045776C /* XWAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XWAlert.m; sourceTree = "<group>"; };
+		E7428A5A1E8E56290045776C /* ShowAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAlertViewController.h; sourceTree = "<group>"; };
+		E7428A5B1E8E56290045776C /* ShowAlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAlertViewController.m; sourceTree = "<group>"; };
+		E7428A5C1E8E56290045776C /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E7428A5D1E8E56290045776C /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E7C5F11A1E8DF6E200ABB44C /* XWAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XWAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7C5F11E1E8DF6E200ABB44C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E7C5F1201E8DF6E200ABB44C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E7C5F1211E8DF6E200ABB44C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E7C5F1231E8DF6E200ABB44C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E7C5F1241E8DF6E200ABB44C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E7C5F1271E8DF6E200ABB44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7C5F1291E8DF6E200ABB44C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7C5F12C1E8DF6E200ABB44C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -78,6 +87,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E7428A521E8E56220045776C /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				E7428A531E8E56220045776C /* UIAlertController+AddAction.h */,
+				E7428A541E8E56220045776C /* UIAlertController+AddAction.m */,
+				E7428A551E8E56220045776C /* XWAlert.h */,
+				E7428A561E8E56220045776C /* XWAlert.m */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		E7428A591E8E56290045776C /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				E7428A5A1E8E56290045776C /* ShowAlertViewController.h */,
+				E7428A5B1E8E56290045776C /* ShowAlertViewController.m */,
+				E7428A5C1E8E56290045776C /* ViewController.h */,
+				E7428A5D1E8E56290045776C /* ViewController.m */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
 		E7C5F1111E8DF6E200ABB44C = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +132,10 @@
 		E7C5F11C1E8DF6E200ABB44C /* XWAlert */ = {
 			isa = PBXGroup;
 			children = (
+				E7428A521E8E56220045776C /* Alert */,
+				E7428A591E8E56290045776C /* Class */,
 				E7C5F1201E8DF6E200ABB44C /* AppDelegate.h */,
 				E7C5F1211E8DF6E200ABB44C /* AppDelegate.m */,
-				E7C5F1231E8DF6E200ABB44C /* ViewController.h */,
-				E7C5F1241E8DF6E200ABB44C /* ViewController.m */,
 				E7C5F1261E8DF6E200ABB44C /* Main.storyboard */,
 				E7C5F1291E8DF6E200ABB44C /* Assets.xcassets */,
 				E7C5F12B1E8DF6E200ABB44C /* LaunchScreen.storyboard */,
@@ -276,9 +307,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C5F1251E8DF6E200ABB44C /* ViewController.m in Sources */,
+				E7428A5F1E8E56290045776C /* ViewController.m in Sources */,
 				E7C5F1221E8DF6E200ABB44C /* AppDelegate.m in Sources */,
 				E7C5F11F1E8DF6E200ABB44C /* main.m in Sources */,
+				E7428A5E1E8E56290045776C /* ShowAlertViewController.m in Sources */,
+				E7428A571E8E56220045776C /* UIAlertController+AddAction.m in Sources */,
+				E7428A581E8E56220045776C /* XWAlert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +552,7 @@
 				E7C5F1491E8DF6E200ABB44C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7C5F14A1E8DF6E200ABB44C /* Build configuration list for PBXNativeTarget "XWAlertTests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +561,7 @@
 				E7C5F14C1E8DF6E200ABB44C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7C5F14D1E8DF6E200ABB44C /* Build configuration list for PBXNativeTarget "XWAlertUITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +570,7 @@
 				E7C5F14F1E8DF6E200ABB44C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
