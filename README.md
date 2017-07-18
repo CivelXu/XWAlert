@@ -1,17 +1,20 @@
-# XWAlert
-AlertViewController的快速调用
-### 前言
+
+# AlertViewController 的快速调用，看我就够了。
+
+## 前言
+
 > Alert 在iOS开发中，是一个经常用到的控件。iOS原生的API中的写法，我这里就不吐槽了，无论是AlertView 还是AlertViewcontroller 都需要很多代码来调用。
 
 >网上有很多关于AlertView的封装，再加上这是个已经被废弃的控件。我这里就不来叙述。这里提供一个我自己实现的AlertViewController的快速调用。
 
 
 *  看下图，我猜还有很多人，还在用着废弃的Alert，忍受着 ⚠️⚠️⚠️
-![警告视图](http://upload-images.jianshu.io/upload_images/1805099-d858de2787e595be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+ ![警告视图](http://upload-images.jianshu.io/upload_images/1805099-d858de2787e595be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-### 好了下面就直接上代码的使用 >>>>>>
+ 好了下面就直接上代码的使用 >>>>>>
 
-*   提供一种快速创建 确定和取消 事件的方式
+## 快速创建 
+
 ```
    [XWAlert showAlertWithTitle:@"提示"
                        message:@"你浏览的是成人内容，是否满足18岁？"
@@ -28,7 +31,9 @@ AlertViewController的快速调用
 ```
 
 ![效果预览](http://upload-images.jianshu.io/upload_images/1805099-5e720f1140afc68c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-当然，你还可以省略其中任何一个
+
+* 当然，你还可以省略其中任何一个
+ 
   ```
     [XWAlert showAlertWithTitle:@"注意"
                         message:@"我只有一个按钮哦"
@@ -40,9 +45,9 @@ AlertViewController的快速调用
                        NSLog(@"------- 知道了");
     }];
 ```
-* 自定义UIAlertAction 数量种类不限
+## 自定义UIAlertAction 数量种类不限 
 
-示例1
+* 示例1
 
 ```
    [XWAlert showAlertWithTitle:@"选择题"
@@ -83,7 +88,8 @@ AlertViewController的快速调用
 ```
 ![示例1](http://upload-images.jianshu.io/upload_images/1805099-a63e1262754c8b96.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-示例2
+* 示例2
+
 ```
    [XWAlert showAlertWithTitle:@"注意"
                         message:@"按照要求填写信息"
@@ -122,11 +128,17 @@ AlertViewController的快速调用
 
 ```
 ![示例2](http://upload-images.jianshu.io/upload_images/1805099-16434144852b63c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-###### 这里需要注意的是 这个方法 callback 一个 UIAlertController ，*maker。 我为UIAlertController添加了一个便利添加UIAlertAction的Category。
 
-一. 第一种是添加一个默认的AlertAction,只需要输入标题，然后handle业务逻辑就可以。
 
-```/**
+```
+ 这里需要注意的是 这个方法 callback 一个 UIAlertController ，*maker。 
+ 我为UIAlertController添加了一个便利添加UIAlertAction的Category。
+```
+
+* 第一种是添加一个默认的AlertAction,只需要输入标题，然后handle业务逻辑就可以。
+
+```
+/**
  to add UIAlertAction with UIAlertActionStyleDefault
 
  @param title - the title of UIAlertAction
@@ -135,10 +147,11 @@ AlertViewController的快速调用
 - (void)addAlertDefaultActionWithTitle:(NSString *_Nullable)title
                                handler:(void (^_Nullable)(UIAlertAction * _Nullable  action))handler;
 ```
-二.  第二种和第一种的区别在于可以选择样式
 
+*  第二种和第一种的区别在于可以选择样式
 
-```/**
+```
+/**
  to add UIAlertAction with Custom Style
 
  @param title - the title of UIAlertAction
@@ -149,7 +162,9 @@ AlertViewController的快速调用
                     actionStyle:(AlertActionStyle)actionStyle
                         handler:(void (^ __nullable)(UIAlertAction * _Nullable action))handler;
 ```
-三. 第三种是添加TextFiled，可以添加占位，密文输入。会callback 一个输入结束后的text
+
+* 第三种是添加TextFiled，可以添加占位，密文输入。会callback 一个输入结束后的text
+
 ```
 /**
  to add TextField in your alert , callback the  text which  you input
@@ -163,7 +178,9 @@ AlertViewController的快速调用
                     secureTextEntry:(BOOL)secureTextEntry
                             textHandler:(TextFiledHanler _Nullable )textHandler;
 ```
-四.第四种和第三种类似，添加textFiled；callback的是 textFiled对象本身，用于处理业务逻辑。
+
+* 第四种和第三种类似，添加textFiled；callback的是 textFiled对象本身，用于处理业务逻辑。
+
 ```
 /**
  to add TextField in your alert, callback the  textFiled which  you built
@@ -177,7 +194,8 @@ AlertViewController的快速调用
                     secureTextEntry:(BOOL)secureTextEntry
                    textFiledhandler:(void(^_Nullable)(UITextField * _Nonnull textField))textFiledhandler;
 ```
-* 第三种是没有纯message的提升，可以设定自动miss的时间
+## 纯message 自动miss
+
 ```
     [XWAlert showAlertWithTitle:@"注意"
                         message:@"这是一条不要脸的弹窗"
@@ -185,11 +203,20 @@ AlertViewController的快速调用
                 autoDismissTime:2];
 ```
 
-![纯文本示例](http://upload-images.jianshu.io/upload_images/1805099-7ba52b232ddd9f9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+   ![纯文本示例](http://upload-images.jianshu.io/upload_images/1805099-7ba52b232ddd9f9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
 
-### 后记 >>>>>>>
-######这只是自己设计出来的一种方案，实现了AlertViewController的大部分功能。如果大家有更加便捷的方案和思路，希望把地址发出来，一起参考学习。
+## 后记 
+
+> 这只是自己设计出来的一种方案，实现了AlertViewController的大部分功能。如果大家有更加便捷的方案和思路，希望把地址发出来，一起参考学习。
+
+* [GitHub -测试demo](https://github.com/CivelXu/XWAlert)
+* [简书](http://www.jianshu.com/p/60460d3a6be5)
+* [个人博客](http://civelxu.com/2016/06/12/AlertViewController%20的快速调用，看我就够了%E3%80%82/)
+
+如果觉得对大家有帮助，还希望大家对我进行支持。😊😊
+
+
 
