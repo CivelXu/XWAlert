@@ -45,6 +45,7 @@
                        NSLog(@"------- 知道了");
     }];
 ```
+
 ## 自定义UIAlertAction 数量种类不限 
 
 * 示例1
@@ -194,6 +195,7 @@
                     secureTextEntry:(BOOL)secureTextEntry
                    textFiledhandler:(void(^_Nullable)(UITextField * _Nonnull textField))textFiledhandler;
 ```
+
 ## 纯message 自动miss
 
 ```
@@ -204,8 +206,6 @@
 ```
 
    ![纯文本示例](http://upload-images.jianshu.io/upload_images/1805099-7ba52b232ddd9f9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
 
 
 ## 后记 
