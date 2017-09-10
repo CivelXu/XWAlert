@@ -13,7 +13,7 @@
 
 @interface ShowAlertViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *dismissBtn;
-@property (nonatomic, assign) AlertStyle selectedStyle;
+@property (nonatomic, assign) UIAlertControllerStyle selectedStyle;
 @end
 
 @implementation ShowAlertViewController
@@ -27,7 +27,7 @@
         self.dismissBtn.hidden = NO;
     }
     
-    self.selectedStyle = Alert;
+    self.selectedStyle = UIAlertControllerStyleAlert;
 }
 
 
@@ -74,12 +74,12 @@
                             NSLog(@"你的选择是--- %@", string3);
                         }];
 
-                        [maker addAlertDefaultActionWithTitle:string4 handler:^(UIAlertAction * _Nullable action) {
+                        [maker addAlertActionWithTitle:string4 actionStyle:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nullable action) {
                             NSLog(@"你的选择是--- %@", string4);
-
+                            
                         }];
 
-                        [maker addAlertActionWithTitle:string5 actionStyle:ActionStyleCancel handler:^(UIAlertAction * _Nullable action) {
+                        [maker addAlertActionWithTitle:string5 actionStyle:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nullable action) {
                             NSLog(@"你的选择是--- %@", string5);
 
                         }];
@@ -91,11 +91,11 @@
     
     
     
-    if (self.selectedStyle == ActionSheet) {
+    if (self.selectedStyle == UIAlertControllerStyleActionSheet) {
         
         [XWAlert showAlertWithTitle:@"注意"
                             message:@"包含了UITextField，只能选择Alert"
-                     preferredStyle:Alert
+                     preferredStyle:UIAlertControllerStyleAlert
                     autoDismissTime:2];
         return;
     }
@@ -116,7 +116,7 @@
                         
 
                         [maker addAlertActionWithTitle:string2
-                                           actionStyle:ActionStyleCancel
+                                           actionStyle:UIAlertActionStyleDestructive
                                                handler:^(UIAlertAction * _Nullable action) {
                             NSLog(@"你的选择是--- %@", string2);
                         }];
@@ -132,7 +132,8 @@
                         [maker addTextFieldWithPlaceholder:@"输入密码"
                                            secureTextEntry:YES
                                           textFiledhandler:^(UITextField * _Nonnull textField) {
-                            textField.placeholder = @"哈哈，请输入密码";
+                             textField.textColor = [UIColor greenColor];
+                             textField.font = [UIFont boldSystemFontOfSize:16];
                         }];
                     }];
 }
@@ -160,12 +161,35 @@
 
 }
 
+- (IBAction)customTwoAction:(id)sender {
+    
+    [XWAlert showAlertWithTitle:@"title"
+                        message:@"message"
+                   confirmTitle:@"default style"
+                    cancelTitle:@"cancel style"
+               destructiveTitle:@"destructive style"
+                 preferredStyle:self.selectedStyle
+                  confirmHandle:^{
+                      
+                    NSLog(@"------- default style");
+
+    }
+                   cancleHandle:^{
+                    NSLog(@"------- cancel style");
+
+    }
+              destructiveHandle:^{
+                    NSLog(@"------- destructive style");
+
+    }];
+}
+
 - (IBAction)seg:(id)sender {
     UISegmentedControl *seg = sender;
     if (seg.selectedSegmentIndex == 0) {
-        self.selectedStyle = Alert;
+        self.selectedStyle = UIAlertControllerStyleAlert;
     } else {
-        self.selectedStyle = ActionSheet;
+        self.selectedStyle = UIAlertControllerStyleAlert;
     }
 }
 

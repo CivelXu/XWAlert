@@ -9,9 +9,9 @@
 #import "UIAlertController+AddAction.h"
 #import <objc/runtime.h>
 
-char* const XWAlertKey = "buttonKey";
+char * const XWAlertKey = "buttonKey";
 
-@interface UIAlertController ()<UITextFieldDelegate>
+@interface UIAlertController ()
 
 @end
 
@@ -23,24 +23,20 @@ char* const XWAlertKey = "buttonKey";
     UIAlertAction *action = [UIAlertAction actionWithTitle:title
                                                       style:UIAlertActionStyleDefault
                                                     handler:^(UIAlertAction * _Nonnull action) {
-                                                        if (handler) {
-                                                            handler(action);
-                                                        }
+                                                        if (handler)  handler(action);
                                                     }];
     [self addAction:action];
 }
 
 - (void)addAlertActionWithTitle:(NSString *_Nullable)title
-                    actionStyle:(AlertActionStyle)actionStyle
+                    actionStyle:(UIAlertActionStyle)actionStyle
                         handler:(void (^ __nullable)(UIAlertAction * _Nullable action))handler {
     
     UIAlertAction *action = [UIAlertAction actionWithTitle:title
-                                                     style:(UIAlertActionStyle)actionStyle
+                                                     style:actionStyle
                                                    handler:^(UIAlertAction * _Nonnull action) {
-                                                       if (handler) {
-                                                           handler(action);
-                                                       }
-                                                   }];
+                                                       if (handler)  handler(action);
+                                                    }];
     [self addAction:action];
 }
 
@@ -48,14 +44,14 @@ char* const XWAlertKey = "buttonKey";
                     secureTextEntry:(BOOL)secureTextEntry
                         textHandler:(TextFiledHanler _Nullable )textHandler   {
     
-    __weak typeof(self) weakself = self;
-    
     objc_setAssociatedObject(self, XWAlertKey, textHandler, OBJC_ASSOCIATION_COPY);
     
+    __weak typeof(self) weakself = self;
     [self addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
         textField.secureTextEntry = secureTextEntry;
         textField.placeholder = placeholder;
-        textField.delegate = weakself;
+        [textField addTarget:weakself action:@selector(textFieldDidChange:)
+             forControlEvents:UIControlEventEditingChanged];
     }];
 }
 
@@ -67,19 +63,16 @@ char* const XWAlertKey = "buttonKey";
         textField.secureTextEntry = secureTextEntry;
         textField.placeholder = placeholder;
         __weak typeof(textField) weakTextFiled = textField;
-        if (textFiledhandler) {
-            textFiledhandler(weakTextFiled);
-        }
-    }];
+        if (textFiledhandler)  textFiledhandler(weakTextFiled);
+     }];
 }
 
-#pragma mark - UITextFieldDelegate
+#pragma mark - TextFieldDidChange Action
 
-- (void)textFieldDidEndEditing:(UITextField *)textField {
+- (void)textFieldDidChange:(UITextField *)textField {
     TextFiledHanler handler = objc_getAssociatedObject(self,XWAlertKey);
-    if (handler) {
-        handler(textField.text);
-    }
+    if (handler)  handler(textField.text);
 }
+
 
 @end

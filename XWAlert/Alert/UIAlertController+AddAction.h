@@ -8,16 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSInteger, AlertActionStyle) {
-    ActionStyleDefault = 0,
-    ActionStyleCancel,
-    ActionStyleDestructive
-};
-
 typedef void (^TextFiledHanler)(NSString * _Nullable text);
 
 @interface UIAlertController (AddAction)
-
 
 /**
  to add UIAlertAction with UIAlertActionStyleDefault
@@ -34,11 +27,11 @@ typedef void (^TextFiledHanler)(NSString * _Nullable text);
 
 
  @param title - the title of UIAlertAction
- @param actionStyle - to chose alertActionStyle (ActionStyleDefault / ActionStyleCancel / ActionStyleDestructive)
+ @param actionStyle - to chose UIAlertActionStyle
  @param handler - to handle your business
  */
 - (void)addAlertActionWithTitle:(NSString *_Nullable)title
-                    actionStyle:(AlertActionStyle)actionStyle
+                    actionStyle:(UIAlertActionStyle)actionStyle
                         handler:(void (^ __nullable)(UIAlertAction * _Nullable action))handler;
 
 

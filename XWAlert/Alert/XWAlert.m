@@ -17,13 +17,13 @@
                    message:(NSString *)message
               confirmTitle:(NSString *)confirmTitle
                cancelTitle:(NSString *)cancelTitle
-            preferredStyle:(AlertStyle)preferredStyle
+            preferredStyle:(UIAlertControllerStyle)preferredStyle
              confirmHandle:(AlertConfirmHandle)confirmHandle
               cancleHandle:(AlertCancelHandle)cancleHandle {
     
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title
                                                                      message:message
-                                                              preferredStyle:(UIAlertControllerStyle)preferredStyle];
+                                                              preferredStyle: preferredStyle];
     
     if (cancelTitle != nil) {
         UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:cancelTitle
@@ -49,25 +49,68 @@
         [alertVC addAction:confirAction];
     }
 
-    __weak typeof(alertVC) weakAlert = alertVC;
-    [[XWAlert currentViewController] presentViewController:alertVC animated:YES completion:^{
-        if (confirmTitle == nil && cancelTitle == nil) {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [weakAlert dismissViewControllerAnimated:YES completion:nil];
-            });
-        }
-    }];
+     [[XWAlert currentViewController] presentViewController:alertVC animated:YES completion: nil];
 }
-
 
 + (void)showAlertWithTitle:(NSString *)title
                    message:(NSString *)message
-            preferredStyle:(AlertStyle)preferredStyle
+              confirmTitle:(NSString *)confirmTitle
+               cancelTitle:(NSString *)cancelTitle
+          destructiveTitle:(NSString *)destructiveTitle
+            preferredStyle:(UIAlertControllerStyle)preferredStyle
+             confirmHandle:(AlertConfirmHandle)confirmHandle
+              cancleHandle:(AlertCancelHandle)cancleHandle
+         destructiveHandle:(AlertDestructiveHandle)AlertdestructiveHandle {
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title
+                                                                     message:message
+                                                              preferredStyle: preferredStyle];
+    
+    if (cancelTitle != nil) {
+        UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:cancelTitle
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                                 if (cancleHandle) {
+                                                                     cancleHandle();
+                                                                 }
+                                                             }];
+        [alertVC addAction:cancleAction];
+    }
+    
+    
+    
+    if (confirmTitle != nil) {
+        UIAlertAction *confirAction = [UIAlertAction actionWithTitle:confirmTitle
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                                 if (confirmHandle) {
+                                                                     confirmHandle();
+                                                                 }
+                                                             }];
+        [alertVC addAction:confirAction];
+    }
+    
+    if (destructiveTitle != nil) {
+        UIAlertAction *confirAction = [UIAlertAction actionWithTitle:destructiveTitle
+                                                               style:UIAlertActionStyleDestructive
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                                 if (confirmHandle) {
+                                                                     confirmHandle();
+                                                                 }
+                                                             }];
+        [alertVC addAction:confirAction];
+    }
+    
+    [[XWAlert currentViewController] presentViewController:alertVC animated:YES completion: nil];
+}
+
++ (void)showAlertWithTitle:(NSString *)title
+                   message:(NSString *)message
+            preferredStyle:(UIAlertControllerStyle)preferredStyle
                actionMaker:(AlertMarker)actionMaker {
     
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title
                                                                      message:message
-                                                              preferredStyle:(UIAlertControllerStyle)preferredStyle];
+                                                              preferredStyle: preferredStyle];
     __weak typeof(alertVC) weakAlert = alertVC;
     if (actionMaker) {
         actionMaker(weakAlert);
@@ -84,12 +127,12 @@
 
 + (void)showAlertWithTitle:(NSString *)title
                    message:(NSString *)message
-            preferredStyle:(AlertStyle)preferredStyle
+            preferredStyle:(UIAlertControllerStyle)preferredStyle
            autoDismissTime:(int)autoDismissTime {
     
     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:title
                                                                      message:message
-                                                              preferredStyle:(UIAlertControllerStyle)preferredStyle];
+                                                              preferredStyle: preferredStyle];
     __weak typeof(alertVC) weakAlert = alertVC;
     [[XWAlert currentViewController] presentViewController:alertVC animated:YES completion:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(autoDismissTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

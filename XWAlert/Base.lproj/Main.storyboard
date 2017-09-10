@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XbV-Lh-YHR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="XbV-Lh-YHR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -75,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBc-MF-Eji">
-                                <rect key="frame" x="30" y="160" width="315" height="40"/>
+                                <rect key="frame" x="30" y="80" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.93923383951187134" green="0.89865201711654663" blue="0.74425667524337769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TLV-dR-s2H"/>
@@ -86,7 +86,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SY3-20-AZ9">
-                                <rect key="frame" x="30" y="240" width="315" height="40"/>
+                                <rect key="frame" x="30" y="160" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.93923383951187134" green="0.89865201711654663" blue="0.74425667524337769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Custom Alert1"/>
                                 <connections>
@@ -94,28 +94,28 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDC-W4-bNx">
-                                <rect key="frame" x="30" y="320" width="315" height="40"/>
+                                <rect key="frame" x="30" y="240" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.93923383951187134" green="0.89865201711654663" blue="0.74425667524337769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Custom Aler2"/>
+                                <state key="normal" title="Custom Alert2"/>
                                 <connections>
                                     <action selector="customAlert2:" destination="4zb-Vy-VDz" eventType="touchUpInside" id="XcC-lS-abA"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Cx-f2-fRh">
-                                <rect key="frame" x="60" y="607" width="255" height="31"/>
+                                <rect key="frame" x="50" y="607" width="275" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="S3d-xr-Zd4"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Alert"/>
-                                    <segment title="AlertSheet"/>
+                                    <segment title="ActionSheet"/>
                                 </segments>
                                 <connections>
                                     <action selector="seg:" destination="4zb-Vy-VDz" eventType="valueChanged" id="U25-JT-iub"/>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RuD-Rr-u32">
-                                <rect key="frame" x="30" y="400" width="315" height="40"/>
+                                <rect key="frame" x="30" y="320" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.93923383951187134" green="0.89865201711654663" blue="0.74425667524337769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Only Message"/>
                                 <connections>
@@ -123,7 +123,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkQ-0Q-iq0">
-                                <rect key="frame" x="30" y="480" width="315" height="40"/>
+                                <rect key="frame" x="30" y="400" width="315" height="40"/>
                                 <color key="backgroundColor" red="0.93923383949999995" green="0.89865201709999998" blue="0.74425667520000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ssB-Hc-xua"/>
@@ -144,6 +144,17 @@
                                     <action selector="dissMiss:" destination="4zb-Vy-VDz" eventType="touchUpInside" id="ckM-xS-5YS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icv-t8-dhI">
+                                <rect key="frame" x="30" y="480" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.93923383949999995" green="0.89865201709999998" blue="0.74425667520000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yoG-Yd-qOh"/>
+                                </constraints>
+                                <state key="normal" title="Custom two action by style"/>
+                                <connections>
+                                    <action selector="customTwoAction:" destination="4zb-Vy-VDz" eventType="touchUpInside" id="sjZ-ON-Fxo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -154,8 +165,9 @@
                             <constraint firstItem="dDC-W4-bNx" firstAttribute="trailing" secondItem="SY3-20-AZ9" secondAttribute="trailing" id="E4S-aL-0WK"/>
                             <constraint firstItem="W3y-rk-9HO" firstAttribute="leading" secondItem="jPC-ec-lSx" secondAttribute="leading" constant="20" id="GmL-E9-mzZ"/>
                             <constraint firstItem="dDC-W4-bNx" firstAttribute="top" secondItem="SY3-20-AZ9" secondAttribute="bottom" constant="40" id="OHC-tq-W2O"/>
+                            <constraint firstItem="Icv-t8-dhI" firstAttribute="top" secondItem="VkQ-0Q-iq0" secondAttribute="bottom" constant="40" id="ORa-OD-Ley"/>
                             <constraint firstItem="W3y-rk-9HO" firstAttribute="top" secondItem="IQe-g5-G0J" secondAttribute="bottom" constant="20" id="QKx-kh-PmW"/>
-                            <constraint firstAttribute="trailing" secondItem="5Cx-f2-fRh" secondAttribute="trailing" constant="60" id="TBH-eU-Zdq"/>
+                            <constraint firstAttribute="trailing" secondItem="5Cx-f2-fRh" secondAttribute="trailing" constant="50" id="TBH-eU-Zdq"/>
                             <constraint firstItem="SY3-20-AZ9" firstAttribute="leading" secondItem="hBc-MF-Eji" secondAttribute="leading" id="TKw-72-LYf"/>
                             <constraint firstItem="RuD-Rr-u32" firstAttribute="leading" secondItem="dDC-W4-bNx" secondAttribute="leading" id="UDB-52-IUR"/>
                             <constraint firstItem="SY3-20-AZ9" firstAttribute="trailing" secondItem="hBc-MF-Eji" secondAttribute="trailing" id="ZaS-0f-rSZ"/>
@@ -164,12 +176,14 @@
                             <constraint firstItem="dDC-W4-bNx" firstAttribute="height" secondItem="SY3-20-AZ9" secondAttribute="height" id="dd3-kk-ZAC"/>
                             <constraint firstItem="VkQ-0Q-iq0" firstAttribute="top" secondItem="RuD-Rr-u32" secondAttribute="bottom" constant="40" id="eJq-Ri-9ZB"/>
                             <constraint firstAttribute="trailing" secondItem="VkQ-0Q-iq0" secondAttribute="trailing" constant="30" id="f8x-Bb-XU2"/>
+                            <constraint firstItem="Icv-t8-dhI" firstAttribute="leading" secondItem="VkQ-0Q-iq0" secondAttribute="leading" id="fWc-Qb-vXo"/>
                             <constraint firstItem="SY3-20-AZ9" firstAttribute="height" secondItem="hBc-MF-Eji" secondAttribute="height" id="kqa-ve-PT1"/>
                             <constraint firstItem="RuD-Rr-u32" firstAttribute="height" secondItem="dDC-W4-bNx" secondAttribute="height" id="oIV-wq-rUl"/>
-                            <constraint firstItem="hBc-MF-Eji" firstAttribute="top" secondItem="IQe-g5-G0J" secondAttribute="bottom" constant="140" id="wXA-H8-hYU"/>
+                            <constraint firstItem="hBc-MF-Eji" firstAttribute="top" secondItem="IQe-g5-G0J" secondAttribute="bottom" constant="60" id="wXA-H8-hYU"/>
                             <constraint firstItem="hBc-MF-Eji" firstAttribute="leading" secondItem="jPC-ec-lSx" secondAttribute="leading" constant="30" id="xBx-0G-685"/>
+                            <constraint firstItem="Icv-t8-dhI" firstAttribute="trailing" secondItem="VkQ-0Q-iq0" secondAttribute="trailing" id="xO7-WG-HE4"/>
                             <constraint firstItem="RuD-Rr-u32" firstAttribute="top" secondItem="dDC-W4-bNx" secondAttribute="bottom" constant="40" id="yFr-2G-7Au"/>
-                            <constraint firstItem="5Cx-f2-fRh" firstAttribute="leading" secondItem="jPC-ec-lSx" secondAttribute="leading" constant="60" id="yhM-RZ-oWM"/>
+                            <constraint firstItem="5Cx-f2-fRh" firstAttribute="leading" secondItem="jPC-ec-lSx" secondAttribute="leading" constant="50" id="yhM-RZ-oWM"/>
                             <constraint firstItem="dDC-W4-bNx" firstAttribute="leading" secondItem="SY3-20-AZ9" secondAttribute="leading" id="zNU-oN-Jm6"/>
                         </constraints>
                     </view>
