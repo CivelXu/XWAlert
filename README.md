@@ -4,9 +4,9 @@
 ![](https://img.shields.io/cocoapods/v/XWAlert.svg?style=flat)
 ![](https://img.shields.io/badge/platform-ios-light.svg)
 ![](https://img.shields.io/badge/license-MIT-000000.svg)
-![](https://img.shields.io/badge/language-objc-orange.svg)
+![](https://img.shields.io/badge/language-objc-yellow.svg)
 [![](https://img.shields.io/badge/weibo-xuxiwen-red.svg)](http://weibo.com/2670925983)
-[![](https://img.shields.io/badge/weibo-Blog-ff69b4.svg)](http://civelxu.com)
+[![](https://img.shields.io/badge/Blog-CivelXu-ff69b4.svg)](http://civelxu.com)
 
 ## 前言
 
