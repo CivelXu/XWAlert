@@ -1,4 +1,4 @@
-# XWAlert
+# XWAlert (快速调用 UIAlertViewcontroller )
 
 [![](https://travis-ci.org/CivelXu/XWAlert.svg?branch=master)](https://github.com/CivelXu/XWAlert)
 ![](https://img.shields.io/badge/platform-ios-light.svg)
