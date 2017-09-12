@@ -1,6 +1,10 @@
 # XWAlert
 
 [![](https://travis-ci.org/CivelXu/XWAlert.svg?branch=master)](https://github.com/CivelXu/XWAlert)
+![](https://img.shields.io/badge/platform-ios-light.svg)
+![](https://img.shields.io/badge/license-MIT-000000.svg)
+![](https://img.shields.io/badge/language-objc-orange.svg)
+[![](https://img.shields.io/badge/weibo-xuxiwen-red.svg)](http://weibo.com/2670925983)
 
 ## 前言
 
