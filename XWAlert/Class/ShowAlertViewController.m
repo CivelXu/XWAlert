@@ -189,7 +189,7 @@
     if (seg.selectedSegmentIndex == 0) {
         self.selectedStyle = UIAlertControllerStyleAlert;
     } else {
-        self.selectedStyle = UIAlertControllerStyleAlert;
+        self.selectedStyle = UIAlertControllerStyleActionSheet;
     }
 }
 
